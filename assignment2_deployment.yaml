@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  Namespace: jessiekim
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: Assignment2
+  template:
+    metadata:
+      labels:
+        app: Assignment2
+    spec:
+      containers:
+        - name: node_assignment
+          image: jessiekim/assignment2:latest
+          ports:
+            - containerPort: 3000  
